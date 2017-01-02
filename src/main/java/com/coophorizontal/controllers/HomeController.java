@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Value;
 
 @Controller
 @RequestMapping(value = "/")
