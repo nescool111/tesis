@@ -62,6 +62,9 @@ Author     : nalvarez
                             <a href="#page-top"></a>
                         </li>
                         <li>
+                            <a class="page-scroll" href="#register">Registro</a>
+                        </li>
+                        <li>
                             <a class="page-scroll" href="#about">Acerca</a>
                         </li>
                         <li>
@@ -95,6 +98,21 @@ Author     : nalvarez
             </div>
         </header>
 
+        
+        
+        
+        <!-- About register -->
+        <section id="register" class="container content-section text-center">
+            <div class="download-section">
+                  <div class="container">
+                    <h2>Registro</h2>
+                    <p>El operador logístico podrá acceder a la aplicación luego de registrarse</p>
+                    <a href="web/registro" class="btn btn-default btn-lg">Reg&iacute;strate</a>
+                    <p>-</p>
+                </div>
+            </div>
+        </section>
+        
         <!-- About Section -->
         <section id="about" class="container content-section text-center">
             <div class="row">
@@ -172,30 +190,30 @@ Author     : nalvarez
 
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 4.6279338, lng: - 74.0676211, 17}
-                ,
-                zoom: 6
-            }
-            );
-            var infoWindow = new google.maps.InfoWindow({map: map});
+                    center: {lat: 4.6279338, lng: -74.0676211}
+                    ,
+                    zoom: 6
+                }
+                );
+                var infoWindow = new google.maps.InfoWindow({map: map});
 
-            // Try HTML5 geolocation.
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    var pos = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
+                // Try HTML5 geolocation.
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
 
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent('Location found.');
-                    map.setCenter(pos);
-                }, function () {
-                    handleLocationError(true, infoWindow, map.getCenter());
-                });
-            } else {
-                // Browser doesn't support Geolocation
-                handleLocationError(false, infoWindow, map.getCenter());
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent('Location found.');
+                        map.setCenter(pos);
+                    }, function () {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
                 }
             }
 
@@ -207,9 +225,9 @@ Author     : nalvarez
             }
         </script>
 
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwL-8XzTMaPLMg-64rL1_mwWCOUzbzGfc&sensor=false">
-<!-- Theme JavaScript -->
-                    <script src="js/grayscale.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwL-8XzTMaPLMg-64rL1_mwWCOUzbzGfc&sensor=false"></script>
+        <!-- Theme JavaScript -->
+        <script src="js/grayscale.min.js"></script>
 
     </body>
 

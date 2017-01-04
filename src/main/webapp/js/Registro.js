@@ -24,7 +24,7 @@ function Contacto() {
 
 
     Instance.validateFormCon = function () {
-        if (validacion.checkValidForm("FormNova")) {
+        if (validacion.checkValidForm("FormReg")) {
             Instance.enviarRegistro();
         } else {
         }
@@ -38,10 +38,10 @@ function Contacto() {
         $("#paisval").val($("#departamentos").val());
         $("#departamentoval").val($("#ciudad").val());
         $.ajax({
-            url: $("#FormNova").attr("action"),
+            url: $("#FormReg").attr("action"),
             timeout: 60000,
             type: "POST",
-            data: $("#FormNova").serialize(),
+            data: $("#FormReg").serialize(),
             cache: false,
             dataType: "json",
             error: function (xhr, status) {
@@ -49,11 +49,11 @@ function Contacto() {
             success: function (response, status) {
                 if (response.respuesta === "1") {
                     $("#loginingtwo").show();
-                    $('#FormNova').trigger("reset");
+                    $('#FormReg').trigger("reset");
                 } else if (response.respuesta === "2") {
                     $("#loginingtwo").show();
                     alert("Se ha presentado un problema");
-                    $('#FormNova').trigger("reset");
+                    $('#FormReg').trigger("reset");
                 }
 //                Instance.loading.hideLoading();
             }

@@ -35,8 +35,6 @@ public class UsuarioDto implements BaseEntity {
     
     private String telefono;
     
-    private String ubicacion;
-    
     private CiudadDto ciudad;
     
     private DepartamentoDto departamento;
@@ -105,14 +103,6 @@ public class UsuarioDto implements BaseEntity {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
     }
 
     public CiudadDto getCiudad() {

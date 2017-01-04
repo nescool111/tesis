@@ -37,7 +37,6 @@ public class UsuarioMapper implements BasicEntityMapper {
             dto.setTelefono(entity.getTelefono());
             dto.setDocumento(entity.getDocumento());
             dto.setTipoDocumento(entity.getTipoDocumento());
-            dto.setUbicacion(entity.getUbicacion());
         }
         return dto;
     }

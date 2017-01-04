@@ -56,9 +56,7 @@ public class Usuario implements BaseEntity {
     @Size(max = 15)
     @Column(name = "telefono")
     private String telefono;
-    @Size(max = 45)
-    @Column(name = "ubicacion")
-    private String ubicacion;
+
     @JoinColumn(name = "ciudad_id", referencedColumnName = "id_ciudad")
     @ManyToOne
     private Ciudad ciudad;
@@ -129,14 +127,6 @@ public class Usuario implements BaseEntity {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
     }
 
     public Ciudad getCiudad() {

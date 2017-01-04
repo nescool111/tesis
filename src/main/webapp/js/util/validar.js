@@ -1,12 +1,3 @@
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyC1nP1ygHgHe-CK8ceLq7P0k4rJumrj1VU",
-    authDomain: "nueva-venta.firebaseapp.com",
-    databaseURL: "https://nueva-venta.firebaseio.com",
-    storageBucket: "nueva-venta.appspot.com",
-    messagingSenderId: "337341522122"
-};
-firebase.initializeApp(config);
 
 $(document).ready(function () {
     // Metodo para validad correo
@@ -83,29 +74,5 @@ $(document).ready(function () {
         }
     });
 
-    $("#enviar").click(function () {
-
-        if ($("#FormNova").valid()) {
-            var date = new Date();
-            var mes = parseInt(date.getMonth()) + 1;
-            var fecha = date.getFullYear() + "/" + mes + "/" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-            var pri = $("input[name='autorizo']:checked").val();
-            var datos = {
-                nombre: $("#nombreContacto").val(),
-                apellido: $("#apellidosContacto").val(),
-                tipoIden: $("#tipoID").val(),
-                documento: $("#numID").val(),
-                pais: $("#departamentos").val(),
-                municipio: $("#ciudad").val(),
-                celular: $("#numCel").val(),
-                correo: $("#email").val(),
-                autoMail: pri,
-                motivo: $("#motivo").val(),
-                fecha: fecha
-            };
-            console.log(datos)
-            // conDB.push(datos);
-            var newPostKey = firebase.database().ref().child('Nova-Venta').push(datos);
-        }
-    });
+   
 });
