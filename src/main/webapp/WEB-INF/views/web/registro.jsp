@@ -45,41 +45,39 @@ Author     : nalvarez
                 </div>
 
                 <form id="FormReg" action="<%=request.getContextPath()%>/ajax/registro" method="post" autocomplete="off">
-                    <div class="form-group col-sm-6">		    							
-                        <label for="NombreContacto">Nombre y Apellidos</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de contacto">				
+                    <div class="row">
+                        <div class="form-group col-sm-6 col-md-6">		    							
+                            <label for="NombreContacto">Nombre y Apellidos</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de contacto">				
+                        </div>
+
+                        <div class="form-group col-sm-6 col-md-6">
+                            <label for="tipo_documento">Tipo de identificaci&oacute;n</label>    							
+                            <select class="form-control" id="tipo_documento" name="tipo_documento">
+                                <option selected>CC</option>
+                                <option>TI</option>
+                                <option>NIT</option>
+                                <option>CE</option>
+                                <option>Pasaporte</option>
+                                <option>Otros</option>						  
+                            </select>					
+                        </div> 
                     </div>
 
-                    <div class="form-group col-sm-6 col-md-2">
-                        <label for="tipo_documento">Tipo de identificaci&oacute;n</label>    							
-                        <select class="form-control" id="tipo_documento" name="tipo_documento">
-                            <option selected>CC</option>
-                            <option>TI</option>
-                            <option>NIT</option>
-                            <option>CE</option>
-                            <option>Pasaporte</option>
-                            <option>Otros</option>						  
-                        </select>					
-                    </div>
-                    <div class="form-group col-sm-6 col-md-4">
-                        <label for="documento">N&uacute;mero de documento</label>
-                        <input type="text" class="form-control" id="documento" name="documento" placeholder="N&uacute;mero de documento">			
-                    </div>
-                    <div class="form-group col-sm-6 col-md-2" style="">
-                        <select class="form-control"  name="departamentoId" id="departamento"  onchange="ubicacion.validateDepartamento()" >
-                            <option value ="" disabled selected >Seleccione Departamento</option>
-                            <c:forEach var="departamento" items="${departamentos}">
-                                <option value="${departamento.id}"> ${departamento.nombre} </option>
-                            </c:forEach>
-                        </select>
-                    </div>					
-
-                    <div class="form-group col-sm-6 col-md-6">
-                        <select class="form-control" name="ciudad"  id="ciudad" class="required" >
-                            <option value =""> Seleccione Ciudad... </option>
-                        </select>
-                    </div>
-                    <div class="form-group col-sm-6">		    							
+                    <div class="row">
+                        <div class="form-group col-sm-6 col-md-6">
+                            <label for="documento">N&uacute;mero de documento</label>
+                            <input type="text" class="form-control" id="documento" name="documento" placeholder="N&uacute;mero de documento">			
+                        </div>
+                        <div class="form-group col-sm-6 col-md-6" style="">
+                            <label for="documento">Departamento</label>
+                            <select class="form-control"  name="departamentoId" id="departamento"  onchange="ubicacion.validateDepartamento()" >
+                                <option value ="" disabled selected >Seleccione Departamento</option>
+                                <c:forEach var="departamento" items="${departamentos}">
+                                    <option value="${departamento.id}"> ${departamento.nombre} </option>
+                                </c:forEach>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group col-sm-6 col-md-6">
@@ -87,8 +85,20 @@ Author     : nalvarez
                         <input type="text" class="form-control" id="numCel" name="numCel" placeholder="N&uacute;mero celular">			
                     </div>
                     <div class="form-group col-sm-6 col-md-6">
-                        <label for="email">Correo electr&oacute;nico</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Correo electr&oacute;nico">			
+                        <label for="documento">Ciudad</label>
+                        <select class="form-control" name="ciudad"  id="ciudad" class="required" >
+                            <option value =""> Seleccione Ciudad... </option>
+                        </select>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="form-group col-sm-6 col-md-6">
+                            <label for="email">Correo electr&oacute;nico</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo electr&oacute;nico">			
+                        </div>
+
                     </div>
 
 
@@ -99,7 +109,9 @@ Author     : nalvarez
 
 
                     </div>
-                    <input id="enviar" type="button" class="btn btn-default enviar" value="Registrar" >
+                    <div class="row">
+                        <input id="enviar" type="button" class="btn btn-default enviar" value="Registrar" >
+                    </div>
                 </form>
             </div>
         </div>    
