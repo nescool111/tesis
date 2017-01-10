@@ -381,7 +381,7 @@
                 <domain.url>https://cooperacion-horizontal.appspot.com</domain.url>
                 <jdbc.driverClassName>com.mysql.jdbc.GoogleDriver</jdbc.driverClassName>
                 <jdbc.url>jdbc:google:mysql://cooperacion-horizontal:us-central1:cooperacion/cooperacionbd</jdbc.url>
-                <jdbc.username>cooperacionuser</jdbc.username>
+                <jdbc.username>root</jdbc.username>
                 <jdbc.password>cooperacion321</jdbc.password>
                 
                 <mail.host>smtp.gmail.com</mail.host>

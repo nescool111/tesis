@@ -53,7 +53,7 @@ Author     : nalvarez
 
                         <div class="form-group col-sm-6 col-md-6">
                             <label for="tipo_documento">Tipo de identificaci&oacute;n</label>    							
-                            <select class="form-control" id="tipo_documento" name="tipo_documento">
+                            <select class="form-control" id="tipoDocumento" name="tipoDocumento">
                                 <option selected>CC</option>
                                 <option>TI</option>
                                 <option>NIT</option>
@@ -82,7 +82,7 @@ Author     : nalvarez
 
                     <div class="form-group col-sm-6 col-md-6">
                         <label for="NumCel">N&uacute;mero celular</label>
-                        <input type="text" class="form-control" id="numCel" name="numCel" placeholder="N&uacute;mero celular">			
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="N&uacute;mero celular">			
                     </div>
                     <div class="form-group col-sm-6 col-md-6">
                         <label for="documento">Ciudad</label>
@@ -96,17 +96,22 @@ Author     : nalvarez
                     <div class="row">
                         <div class="form-group col-sm-6 col-md-6">
                             <label for="email">Correo electr&oacute;nico</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo electr&oacute;nico">			
+                            <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" placeholder="Correo electr&oacute;nico">			
+                        </div>
+
+                    </div>
+                    
+                    <div class="row">
+                        <div class="form-group col-sm-6 col-md-6">
+                            <label for="contrasena">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">			
                         </div>
 
                     </div>
 
 
                     <div class="col-md-12">	
-                        <input type="hidden" name="paisval" id="paisval" >
-
-                        <input type="hidden" name="departamentoval" id="departamentoval" >
-
+                
 
                     </div>
                     <div class="row">
