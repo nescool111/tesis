@@ -16,18 +16,18 @@ import org.springframework.stereotype.Component;
  */
 @Component("usuarioMapper")
 public class UsuarioMapper implements BasicEntityMapper {
-
+    
     @Autowired
     CiudadMapper ciudadMapper;
-
+    
     @Autowired
     DepartamentoMapper departamentoMapper;
-
+    
     @Override
     public BaseEntity entityToDto(BaseEntity baseEntity) {
         Usuario entity = (Usuario) baseEntity;
         UsuarioDto dto = new UsuarioDto();
-
+        
         if (entity != null) {
             dto.setId(entity.getId());
             dto.setCorreoElectronico(entity.getCorreoElectronico());
@@ -37,10 +37,11 @@ public class UsuarioMapper implements BasicEntityMapper {
             dto.setTelefono(entity.getTelefono());
             dto.setDocumento(entity.getDocumento());
             dto.setTipoDocumento(entity.getTipoDocumento());
+            dto.setPassword(entity.getPassword());
         }
         return dto;
     }
-
+    
     @Override
     public List<? extends BaseEntity> listEntitiesToListDtos(List<? extends BaseEntity> entities) {
         ArrayList<UsuarioDto> dtos = new ArrayList<>();

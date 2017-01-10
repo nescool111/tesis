@@ -50,11 +50,19 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/web/registro", method = {RequestMethod.POST, RequestMethod.GET})
-    public ModelAndView contactenos() {
+    public ModelAndView Registro() {
         ModelAndView mav = new ModelAndView("web/registro");
         List<Departamento> departamentos = departamentoService.listAll();
         mav.addObject("departamentos", departamentos);
 
+        return mav;
+    }
+    
+    
+      @RequestMapping(value = "/web/login", method = {RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView Login() {
+        ModelAndView mav = new ModelAndView("web/login");
+        
         return mav;
     }
 

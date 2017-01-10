@@ -18,27 +18,28 @@ import java.util.List;
 public class UsuarioDto implements BaseEntity {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Order(1)
     @ColumnWidth(100)
     private Integer id;
-    
+
     private String nombre;
-    
+
     @TextField("Correo Electronico")
     private String correoElectronico;
-    
+
     private String documento;
-    
+
     @TextField("Tipo de Documento")
     private String tipoDocumento;
-    
+
     private String telefono;
-    
+
+    private String password;
+
     private CiudadDto ciudad;
-    
+
     private DepartamentoDto departamento;
-    
 
     public UsuarioDto() {
     }
@@ -71,6 +72,14 @@ public class UsuarioDto implements BaseEntity {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getDocumento() {
@@ -112,7 +121,6 @@ public class UsuarioDto implements BaseEntity {
     public void setCiudad(CiudadDto ciudad) {
         this.ciudad = ciudad;
     }
-
 
     @Override
     public int hashCode() {

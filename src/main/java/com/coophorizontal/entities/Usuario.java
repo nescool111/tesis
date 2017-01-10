@@ -56,11 +56,14 @@ public class Usuario implements BaseEntity {
     @Size(max = 15)
     @Column(name = "telefono")
     private String telefono;
+    @Size(max = 40)
+    @Column(name = "password")
+    private String password;
 
     @JoinColumn(name = "ciudad_id", referencedColumnName = "id_ciudad")
     @ManyToOne
     private Ciudad ciudad;
- 
+
     @Transient
     protected Object[] jdoDetachedState;
 
@@ -137,7 +140,14 @@ public class Usuario implements BaseEntity {
         this.ciudad = ciudad;
     }
 
- 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;

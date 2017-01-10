@@ -9,7 +9,7 @@ function Contacto() {
         Instance.vigencia = 1;
 
         $(document).ready(function () {
-
+             ubicacion= new Ubicacion();
             $("#enviar").click(function (event) {
                 Instance.validateFormCon();
             });

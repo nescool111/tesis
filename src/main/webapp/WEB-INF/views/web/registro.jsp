@@ -86,7 +86,7 @@ Author     : nalvarez
                     </div>
                     <div class="form-group col-sm-6 col-md-6">
                         <label for="documento">Ciudad</label>
-                        <select class="form-control" name="ciudad"  id="ciudad" class="required" >
+                        <select class="form-control" name="ciudadId"  id="ciudadId" class="required" >
                             <option value =""> Seleccione Ciudad... </option>
                         </select>
                     </div>
