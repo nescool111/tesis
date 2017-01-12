@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-util.importJS("/js/web/usuario/Loading.js");
 
 function AutenticacionUsuario() {
 
@@ -11,18 +10,12 @@ function AutenticacionUsuario() {
 
     Instance.init = function () {
         $(document).ready(function () {
-            Instance.loading = new Loading();
-            Instance.loading.addLoading("changePasswordDiv");
-            Instance.loading.addLoading("createPasswordDiv");
-
+            
             $("#linkIngresar").click(function (e) {
                 e.preventDefault();
                 $("#formLogin").submit();
             });
-            var olvideContrasena = util.getParameter(document.URL, "olvideContrasena");
-            if (olvideContrasena === "1") {
-                Instance.changeForm("changePasswordDiv");
-            }
+
         });
     };
 

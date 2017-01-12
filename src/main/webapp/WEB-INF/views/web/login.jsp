@@ -10,6 +10,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Iniciar Sesion</title>
         <script type="text/javascript" src="<%=request.getContextPath()%>/js/AutenticacionUsuario.js"></script>
+        <script src="/js/libs/jquery-3.1.0.min.js"></script>
+        <script src="/js/libs/jquery.validate.js"></script> 
+        <script src="/js/util/validar.js"></script>    
+        <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/libs/bootstrap-formhelpers.min.js"></script>
 
         <script>
             var autenticacionUsuario = new AutenticacionUsuario();
@@ -51,7 +56,7 @@
                             </p>
                         </div>
 
-                        
+
                     </div>
                     <div class="col-md-6 sin_padding clear-padding-responsive">
                         <div id="loginDiv" class="arma-paquete login login-ingresa">

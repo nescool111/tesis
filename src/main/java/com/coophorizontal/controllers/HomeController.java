@@ -1,6 +1,5 @@
 package com.coophorizontal.controllers;
 
-//import com.coophorizontal.services.security.SecurityService;
 import com.coophorizontal.dtos.UsuarioDto;
 import com.coophorizontal.entities.Ciudad;
 import com.coophorizontal.entities.Departamento;
@@ -9,13 +8,12 @@ import com.coophorizontal.services.CiudadService;
 import com.coophorizontal.services.DepartamentoService;
 import com.coophorizontal.services.EstadoService;
 import com.coophorizontal.services.UsuarioService;
+import com.coophorizontal.services.security.SecurityService;
 import com.dot.gcpbasedot.reflection.EntityReflection;
 import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,6 +40,8 @@ public class HomeController {
     @Autowired
     EstadoService estadoService;
 
+    //@Autowired
+    //SecurityService securityService;
     @RequestMapping(value = "/", method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView getIndex(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView mav = new ModelAndView("index");
@@ -57,12 +57,19 @@ public class HomeController {
 
         return mav;
     }
-    
-    
-      @RequestMapping(value = "/web/login", method = {RequestMethod.POST, RequestMethod.GET})
+
+    @RequestMapping(value = "/web/login", method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView Login() {
         ModelAndView mav = new ModelAndView("web/login");
-        
+
+        return mav;
+    }
+
+    @RequestMapping(value = "/home", method = {RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView getHome(HttpServletRequest request) {
+        // Usuario user = securityService.getCurrentUser();
+        ModelAndView mav = new ModelAndView("/home");
+        //mav.addObject("user", user.getNombre());
         return mav;
     }
 

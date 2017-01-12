@@ -26,7 +26,7 @@ function Validacion() {
     };
 
     this.validateUsuarioForm = function () {
-        $("#usuarioForm").validate({
+        $("#FormReg").validate({
             errorClass: "error",
             validClass: "valid",
             errorElement: "label",
@@ -50,7 +50,7 @@ function Validacion() {
                     minlength: 5,
                     maxlength: 40
                 },
-                departamentoId: {
+                departamento: {
                     required: true
                 },
                 ciudadId: {
@@ -75,7 +75,7 @@ function Validacion() {
                     }
 
                 },
-                terminos: {
+                password: {
                     required: true
                 }
             },
@@ -115,7 +115,7 @@ function Validacion() {
                     minlength: util.minlength,
                     maxlength: util.maxlength
                 },
-                terminos: {
+                password: {
                     required: util.fieldRequired
                 }
             }
