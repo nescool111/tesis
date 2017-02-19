@@ -37,10 +37,10 @@ Author     : nalvarez
 
                 <div id="loginingtwo" class="modal-loading">
 
-                    <div class="row" id="after_check" style="display: none">
-                        <h3>Se ha contactado correctamente!</h3>
+                    <div class="row" id="after_check" name="after_check" style="display: none">
+                        <h3>Se ha registrado correctamente!</h3>
                         <i class="fa fa-thumbs-up"></i>
-                        <a id="aceptarok" href="#" class="aceptar_check">Aceptar</a>
+                        <a id="aceptarok" href="/" class="aceptar_check">Aceptar</a>
                     </div>
                 </div>
 

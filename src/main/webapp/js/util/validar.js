@@ -9,7 +9,7 @@ $(document).ready(function () {
     $.validator.addMethod("string", function (value, element) {
         return this.optional(element) || /^[a-z" "ñÑáé&iacute;ó&uacute;ÁÉÍÓÚ,.;]+$/i.test(value)
     });
-    $("#FormNova").validate({
+    $("#FormReg").validate({
         rules: {
             nombreContacto: {
                 required: true,
@@ -17,28 +17,35 @@ $(document).ready(function () {
                 minlength: 4,
                 maxlength: 100
             },
-            apellidosContacto: {
-                required: true,
-                string: true,
-                minlength: 6
-            },
-            tipoID: {
+           
+            tipo_documento: {
                 required: true,
                 minlength: 1
             },
-            numID: {
+            documento: {
+                required: true,
+                digits: true,
+                minlength: 7
+              },
+            telefono: {
                 required: true,
                 digits: true,
                 minlength: 7
             },
+            
             email: {
                 required: true,
                 email: true
             },
-            motivo: {
+            password: {
                 required: true
             },
-            acepto: "required"
+            departamentoId: {
+                required: true
+            },
+            ciudadId: {
+                required: true
+            }
         },
         messages: {
             nombreContacto: {
@@ -47,16 +54,17 @@ $(document).ready(function () {
                 minlength: "Por favor, m&iacute;nimo 4 caracteres",
                 maxlength: 'El nombre es demasiado largo'
             },
-            apellidosContacto: {
-                required: "Por favor, ingrese sus apellidos completos",
-                string: "Por favor, solo caracteres",
-                minlength: "Por favor, m&iacute;nimo 6 d&iacute;gitos "
-            },
-            tipoID: {
+       
+            tipo_documento: {
                 required: "Por favor, seleccione uno",
                 minlength: "Seleccione una opción"
             },
-            numID: {
+            documento: {
+                required: "Por favor, ingrese el N&uacute;mero de documento",
+                digits: "Por favor, escriba sólo n&uacute;meros",
+                minlength: "Por favor, m&iacute;nimo 7 d&iacute;gitos"
+            },
+            telefono: {
                 required: "Por favor, ingrese el N&uacute;mero de documento",
                 digits: "Por favor, escriba sólo n&uacute;meros",
                 minlength: "Por favor, m&iacute;nimo 7 d&iacute;gitos"
@@ -65,12 +73,16 @@ $(document).ready(function () {
                 required: "Por favor escriba su correo",
                 email: "Correo inv&aacute;lido."
             },
-            motivo: {
+            ciudadId: {
                 required: "Por favor, escriba su motivo de contacto "
             },
-            acepto: {
-                required: "Por favor, acepte la pol&iacute;tica",
+            departamentoId: {
+                required: "Por favor, escriba su motivo de contacto "
+            },
+            motivo: {
+                required: "Por favor, escriba su motivo de contacto "
             }
+            
         }
     });
 

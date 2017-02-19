@@ -16,7 +16,7 @@ function Contacto() {
 
             $("#aceptarok").click(function (event) {
                 $("#loginingone").hide();
-                $("#loginingtwo").hide();
+                $("#after_check").show();
                 $('#FormNova').trigger("reset");
             });
         });
