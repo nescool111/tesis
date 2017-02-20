@@ -91,4 +91,41 @@ public class HomeController {
         return new Gson().toJson(result);
     }
 
+    
+    
+        @RequestMapping(value = "/web/productos", method = {RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView getProductos(HttpServletRequest request) {
+        // Usuario user = securityService.getCurrentUser();
+        ModelAndView mav = new ModelAndView("/web/productos");
+        //mav.addObject("user", user.getNombre());
+        return mav;
+    }
+    
+    @RequestMapping(value = "/ajax/acceder", method = {RequestMethod.POST, RequestMethod.GET})
+    @ResponseBody
+    public String iraProductos(@ModelAttribute("acceder") UsuarioDto usuarioDto, HttpServletRequest request, HttpServletResponse response) {
+        Map result = new HashMap();
+
+       /*Usuario usuario = new Usuario();
+        EntityReflection.updateEntity(usuarioDto, usuario);
+        usuario.setDepartamento(departamento);
+        usuario.setCiudad(ciudad)*/
+        Usuario usuarioSesion=null;
+        usuarioSesion=usuarioService.findUniqueByParameter("correoElectronico", request.getParameter("j_username"));
+        if (usuarioSesion!=null) {
+          if (usuarioSesion.getNombre().equalsIgnoreCase(request.getParameter("j_password"))) {
+        result.put("respuesta", "1");    
+        } else {
+        result.put("respuesta", "2");
+        }   
+        } else {
+            result.put("respuesta", "3");
+        }
+       
+        
+        
+        return new Gson().toJson(result);
+    }
+    
+    
 }

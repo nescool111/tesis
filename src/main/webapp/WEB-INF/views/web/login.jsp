@@ -12,7 +12,7 @@
         <script type="text/javascript" src="<%=request.getContextPath()%>/js/AutenticacionUsuario.js"></script>
         <script src="/js/libs/jquery-3.1.0.min.js"></script>
         <script src="/js/libs/jquery.validate.js"></script> 
-        <script src="/js/util/validar.js"></script>    
+        <script src="/js/Login.js"></script>    
         <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/libs/bootstrap-formhelpers.min.js"></script>
 
@@ -31,9 +31,7 @@
                 <div class="row box-right-title">
                     <div class="col-md-5 no_padding">
                         <div class="col-md-9 col-md-offset-3">
-                            <c:if test="${!empty param.login_error}">
-                                <h1 class="title-banner  blanco-color">Lo sentimos</h1>
-                            </c:if>
+                         
                         </div>
                     </div>
                     <div class="col-md-7"></div>
@@ -43,16 +41,7 @@
 
                         <div class="col-md-7 col-md-offset-5 user-key">
                             <p class="blanco-color slider-text">
-                                <c:if test="${!empty param.login_error}">
-                                    <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
-                                    <c:if test="${SPRING_SECURITY_LAST_EXCEPTION.message eq 'Usuario no registrado, registrate!'}">
-                                        <script>
-                                            $(document).ready(function () {
-                                                $("#modal-general-aceptar").show();
-                                            });
-                                        </script> 
-                                    </c:if>
-                                </c:if>
+                         
                             </p>
                         </div>
 
@@ -84,7 +73,7 @@
                                             <p class="ingresa-correo">Tu correo electr&oacute;nico es tu usuario</p>
                                         </div>
                                     </div>
-                                    <form id="formLogin" action="<c:url value='/j_spring_security_check'/>" method="post">
+                                    <form id="formLogin" action="<%=request.getContextPath()%>/ajax/acceder" method="post">
                                         <div class="row login-inputs">
                                             <div class="col-md-12">
                                                 <div class="input-field">

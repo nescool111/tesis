@@ -331,11 +331,16 @@
                 </property>
             </activation>
             <properties>
-                <domain.url>http://localhost:8880</domain.url>
+               <!-- <domain.url>http://localhost:8880</domain.url>
                 <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
                 <jdbc.url>jdbc:mysql://104.196.137.197:3306/cooperacionbd?zeroDateTimeBehavior=convertToNull</jdbc.url>
                 <jdbc.username>cooperacionuser</jdbc.username>
-                <jdbc.password>cooperacion321</jdbc.password>
+                <jdbc.password>cooperacion321</jdbc.password>-->
+                <domain.url>http://localhost:8880</domain.url>
+                <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+                <jdbc.url>jdbc:mysql://127.0.0.1:3306/horiigwl_cooperacion?zeroDateTimeBehavior=convertToNull</jdbc.url>
+                <jdbc.username>horiigwl_cooperacion</jdbc.username>
+                <jdbc.password>Teres@303</jdbc.password>
                 
                 <mail.host>smtp.gmail.com</mail.host>
                 <mail.port>587</mail.port>
